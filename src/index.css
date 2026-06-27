@@ -1,5 +1,24 @@
 @import "./styles/output.css";
 @import "./styles/custom.css";
+
+:root{
+
+  --bg:#070A0C;
+  --surface:#0F1317;
+  --surface-2:#141A20;
+
+  --primary:#F8FAFC;
+  --secondary:#94A3B8;
+
+  --green:#56CFA2;
+  --green-light:#79E2BC;
+
+  --blue:#5AC8FA;
+
+  --border:rgba(255,255,255,.08);
+
+}
+
 .light-mode {
   background: #f5f5f5;
   color: #111;

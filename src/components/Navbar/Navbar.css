@@ -1,10 +1,18 @@
 .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+box-sizing:border-box;
+    z-index: 1000;
+
     background:#050505;
     padding:20px 60px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position:relative;
+
     border-bottom:1px solid #1c1c1c;
 }
 
@@ -60,10 +68,7 @@
 
 @media(max-width:768px){
 
-.navbar{
-    justify-content:space-between;
-    padding:20px;
-}
+
 
 .menu-btn{
     display:block;
@@ -91,4 +96,13 @@
     display:flex;
 }
 
+}
+
+.active-link{
+    color:#4DFF7A !important;
+    font-weight:700;
+}
+
+.active-link::after{
+    width:100%;
 }

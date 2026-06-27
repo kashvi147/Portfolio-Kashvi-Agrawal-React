@@ -17,8 +17,8 @@
 
 --color-text-secondary: #b8c0bd;
 
---color-accent: #6C63FF;
---color-accent-secondary: #8B5CF6;
+--color-accent: var(--green);
+--color-accent-secondary: var(--green-light);
 
 --radius: 12px;
       }
@@ -34,13 +34,17 @@
       }
 
       body {
-        font-variant-ligatures: common-ligatures;
-        text-rendering: optimizeLegibility;
-        background: var(--color-bg);
-        color: var(--color-text);
-        position: relative;
-        overflow-x: hidden;
-      }
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+
+  background: var(--bg);
+  color: var(--primary);
+
+  position: relative;
+  overflow-x: hidden;
+
+  font-family: Inter, sans-serif;
+}
 
       /* Aurora glow — fixed ambient layer */
       body::before,
@@ -92,11 +96,14 @@
       }
 
       #hero {
-        padding-top: clamp(6rem, 10vw, 8rem);
+        padding-top: clamp(8rem, 12vw, 10rem);
         padding-bottom: clamp(5rem, 8vw, 7rem);
         position: relative;
         overflow: hidden;
-        background: #000000;
+       background:
+radial-gradient(circle at 80% 30%, rgba(86,207,162,.08), transparent 35%),
+radial-gradient(circle at 20% 70%, rgba(4, 29, 98, 0.05), transparent 40%),
+var(--bg);
         min-height: 100dvh;
         display: flex;
         align-items: center;
@@ -125,8 +132,8 @@
   background:
     radial-gradient(
       circle,
-      rgba(108,99,255,0.35) 0%,
-      rgba(108,99,255,0.12) 40%,
+      rgba(2, 1, 27, 0.35) 0%,
+      rgba(3, 24, 74, 0.12) 40%,
       transparent 75%
     );
 
@@ -142,8 +149,8 @@
   background:
     radial-gradient(
       circle,
-      rgba(139,92,246,0.28) 0%,
-      rgba(139,92,246,0.08) 45%,
+      rgba(4, 23, 83, 0.28) 0%,
+      rgba(3, 4, 86, 0.08) 45%,
       transparent 75%
     );
 
@@ -318,7 +325,7 @@
 
       .hero-btn--primary:hover {
          background: #315f45;
-       box-shadow: 0 8px 32px rgba(36, 71, 52, 0.28);
+       box-shadow:0 10px 40px rgba(86,207,162,.12);
         transform: translateY(-1px);
       }
 
@@ -627,7 +634,7 @@
         background: radial-gradient(circle, var(--color-accent-secondary) 0%, transparent 70%);
       }
 
-      .glow-purple {
+      .glow-green {
         background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
       }
 
@@ -735,64 +742,64 @@
         transform: translateY(0);
       }
 
-      /* Accent color remapping (violet → robotics palette) */
-      .text-violet-400 {
+      /* Accent color remapping (var(--green) → robotics palette) */
+      .text-var(--green)-400 {
         color: var(--color-accent) !important;
       }
 
-      .text-violet-300\/75 {
+      .text-var(--green)-300\/75 {
         color: rgba(0, 229, 255, 0.8) !important;
       }
 
-      .text-violet-400\/80 {
+      .text-var(--green)-400\/80 {
         color: rgba(77, 255, 122, 0.85) !important;
       }
 
-      .text-violet-300 {
+      .text-var(--green)-300 {
         color: #6dff92 !important;
       }
 
-      .hover\:text-violet-300:hover,
-      .hover\:text-violet-400:hover {
+      .hover\:text-var(--green)-300:hover,
+      .hover\:text-var(--green)-400:hover {
         color: var(--color-accent-secondary) !important;
       }
 
-      .bg-violet-600 {
+      .bg-var(--green)-600 {
         background: var(--color-accent) !important;
         color: #050505 !important;
         box-shadow: 0 4px 24px rgba(77, 255, 122, 0.22);
         transition: background 280ms ease, box-shadow 280ms ease, transform 280ms ease !important;
       }
 
-      .bg-violet-600:hover,
-      .hover\:bg-violet-500:hover {
+      .bg-var(--green)-600:hover,
+      .hover\:bg-var(--green)-500:hover {
         background: #6dff92 !important;
         color: #050505 !important;
         box-shadow: 0 8px 32px rgba(77, 255, 122, 0.32);
         transform: translateY(-1px);
       }
 
-      .bg-violet-600:active {
+      .bg-var(--green)-600:active {
         transform: translateY(0);
       }
 
-      .border-violet-500\/50:hover,
-      .hover\:border-violet-500\/50:hover {
+      .border-var(--green)-500\/50:hover,
+      .hover\:border-var(--green)-500\/50:hover {
         border-color: rgba(77, 255, 122, 0.35) !important;
         background: rgba(77, 255, 122, 0.04) !important;
       }
 
-      .bg-violet-600\/20 {
+      .bg-var(--green)-600\/20 {
         background: rgba(77, 255, 122, 0.08) !important;
         border: 1px solid rgba(77, 255, 122, 0.15);
         backdrop-filter: blur(4px);
       }
 
-      .focus\:border-violet-500:focus {
+      .focus\:border-var(--green)-500:focus {
         border-color: rgba(77, 255, 122, 0.4) !important;
       }
 
-      .focus\:ring-violet-500:focus {
+      .focus\:ring-var(--green)-500:focus {
         --tw-ring-color: rgba(77, 255, 122, 0.25) !important;
       }
 

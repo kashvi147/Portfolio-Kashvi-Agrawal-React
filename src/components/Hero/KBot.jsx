@@ -1,11 +1,50 @@
+import { useEffect, useState } from "react";
+
 function KBot() {
+  const facts = [
+  {
+    title: "Hi! I'm K-Bot",
+    detail: "Want a quick tour of Kashvi's projects?"
+  },
+  {
+    title: "10+ Projects Built",
+    detail: "From web apps to Arduino and IoT systems."
+  },
+  {
+    title: "Robotics & AI @ JIIT",
+    detail: "Building intelligent hardware-software systems."
+  },
+  {
+    title: "Full Stack Developer",
+    detail: "React, Python, Arduino and Machine Learning."
+  },
+  {
+    title: "Always Learning",
+    detail: "Exploring AI, Robotics and modern web technologies."
+  }
+];
+
+const [currentFact, setCurrentFact] = useState(0); 
+
+function handleKbotClick() {
+  setCurrentFact((prev) => (prev + 1) % facts.length);
+}
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentFact((prev) => (prev + 1) % facts.length);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <div className="kbot-zone">
 
       <button
-        className="kbot-interactive kbot-float"
-        type="button"
-      >
+  className="kbot-interactive kbot-float"
+  onClick={handleKbotClick}
+>
 
        <svg className="kbot-robot" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 {/* Antenna */}
@@ -38,15 +77,15 @@ function KBot() {
             Assistant
           </p>
 
-          <p className="kbot-bubble-text">
-            Hi! I'm K-Bot
-          </p>
+         <p className="kbot-bubble-text">
+  {facts[currentFact].title}
+</p>
 
           <div className="kbot-bubble-extra">
             <div className="kbot-bubble-extra-inner">
               <p>
-                Want a quick tour of Kashvi's projects?
-              </p>
+  {facts[currentFact].detail}
+</p>
             </div>
           </div>
 

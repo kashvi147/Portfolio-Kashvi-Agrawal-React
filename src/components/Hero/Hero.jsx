@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import KBot from "./KBot";
 
 function Hero() {
-  return (
+return (
     <section id="hero" className="safe-x sm:px-8">
       <div className="hero-aurora" aria-hidden="true">
         <div className="hero-aurora__layer hero-aurora__layer--green"></div>
@@ -12,7 +12,10 @@ function Hero() {
 
       <div className="hero-grid">
 
-        <div className="hero-content">
+        <div
+  className="hero-content"
+  data-aos="fade-up"
+>
           <p className="hero-eyebrow">
             Robotics & AI · JIIT
           </p>
@@ -64,7 +67,9 @@ function Hero() {
 </div>
         </div>
 
-        <KBot />
+        <div data-aos="fade-left">
+  <KBot />
+</div>
 
       </div>
     </section>
