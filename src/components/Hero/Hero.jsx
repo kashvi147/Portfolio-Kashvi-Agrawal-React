@@ -5,6 +5,14 @@ function Hero() {
 return (
     <section id="hero" className="safe-x sm:px-8">
       <div className="hero-aurora" aria-hidden="true">
+        <div className="hero-particles" aria-hidden="true">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
         <div className="hero-aurora__layer hero-aurora__layer--green"></div>
         <div className="hero-aurora__layer hero-aurora__layer--cyan"></div>
         <div className="hero-aurora__layer hero-aurora__layer--depth"></div>
