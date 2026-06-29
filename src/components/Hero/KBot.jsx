@@ -97,9 +97,9 @@ function KBot() {
             {facts[currentFact].detail}
           </p>
 
-          <button className="kbot-card-btn">
-  Explore Portfolio →
-</button>
+          <div className="kbot-card-btn">
+    Explore →
+</div>
 
         </div>
 
