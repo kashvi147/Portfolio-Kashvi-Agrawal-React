@@ -1,41 +1,56 @@
 function ProjectCard({ project, position, onClick }) {
   return (
     <article
-      className={`project-card ${position}`}
-      onClick={position === "center" ? onClick : undefined}
-    >
+  className={`project-card ${position}`}
+  data-cursor="OPEN"
+  onClick={onClick}
+  style={{
+    transition:
+      "transform 0.7s cubic-bezier(.22,1,.36,1), opacity 0.7s ease, filter 0.7s ease"
+  }}
+>
       <div className="project-image">
         <img
           src={project.image}
           alt={project.title}
         />
+
+        <div className="project-overlay">
+          <span>{project.category}</span>
+        </div>
       </div>
 
-      <div className="project-info">
+      <div className="project-content">
 
-        <p className="project-category">
-          {project.category}
-        </p>
-
-        <h2 className="project-title">
-          {project.title}
-        </h2>
+        <h3>{project.title}</h3>
 
         <p className="project-description">
           {project.description}
         </p>
 
-        <div className="project-tech">
-          {project.tech.map((tech) => (
+        <div className="tech-list">
+          {project.tech?.map((tech) => (
             <span key={tech}>
               {tech}
             </span>
           ))}
         </div>
 
-        <button className="project-btn">
-          View Details
-        </button>
+        <div className="project-footer">
+
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noreferrer"
+    className="project-button"
+    onClick={(e) => e.stopPropagation()}
+    
+    data-cursor="GITHUB"
+  >
+    View on GitHub →
+  </a>
+
+</div>
 
       </div>
 

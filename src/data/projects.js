@@ -1,4 +1,4 @@
-import portfolioImage from "../assets/ben-kolde-bs2Ba7t69mM-unsplash.jpg";
+/*import portfolioImage from "../assets/ben-kolde-bs2Ba7t69mM-unsplash.jpg";
 import campusverseImage from "../assets/space-stock-QhKEmb9ghJU-unsplash (3).jpg";
 import arduinoImage from "../assets/Screenshot 2026-06-03 225529.png";
 const projects = [

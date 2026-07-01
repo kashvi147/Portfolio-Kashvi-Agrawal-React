@@ -1,0 +1,69 @@
+/* Hide default cursor */
+
+body{
+    cursor:none;
+}
+
+/* Custom Cursor */
+
+.custom-cursor{
+
+    position:fixed;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#56CFA2;
+
+    box-shadow:
+        0 0 15px #56CFA2,
+        0 0 35px rgba(86,207,162,.7);
+
+    pointer-events:none;
+
+    z-index:999999;
+
+    transform:translate(-50%,-50%);
+
+}
+
+/* Terminal Text */
+
+.cursor-text{
+
+    position:absolute;
+
+    top:-38px;
+
+    left:24px;
+
+    white-space:nowrap;
+
+    font-family:"JetBrains Mono", monospace;
+
+    font-size:13px;
+
+    color:#56CFA2;
+
+    background:rgba(8,18,13,.85);
+
+    border:1px solid rgba(86,207,162,.35);
+
+    padding:6px 12px;
+
+    border-radius:10px;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 0 20px rgba(86,207,162,.2);
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    user-select:none;
+
+}

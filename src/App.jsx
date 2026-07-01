@@ -1,3 +1,4 @@
+import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -9,6 +10,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 function App() {
   useEffect(() => {
   AOS.init({
@@ -19,6 +21,7 @@ function App() {
 }, []);
   return (
     <>
+     <CustomCursor />
       <Navbar />
       <Hero />
       <About />

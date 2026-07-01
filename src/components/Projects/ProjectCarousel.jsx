@@ -1,117 +1,132 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import projects from "../../data/projects";
+import useGithubProjects from "../../hooks/useGithubProjects";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 
 function ProjectCarousel() {
-  const featured = projects.filter((project) => project.featured);
 
-  const [current, setCurrent] = useState(0);
+  const { projects, loading } = useGithubProjects();
+
+  const featuredProjects = projects;
+
+  // ALL HOOKS MUST COME FIRST
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) =>
-        prev === featured.length - 1 ? 0 : prev + 1
-      );
+    if (!featuredProjects.length) return;
+
+    const timer = setInterval(() => {
+      nextProject();
     }, 6000);
 
-    return () => clearInterval(interval);
-  }, [featured.length]);
+    return () => clearInterval(timer);
 
-  const previous =
-    current === 0
-      ? featured.length - 1
-      : current - 1;
+  }, [currentIndex, featuredProjects.length]);
 
-  const next =
-    current === featured.length - 1
+  const nextProject = () => {
+    setCurrentIndex((prev) =>
+      prev === featuredProjects.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const previousProject = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? featuredProjects.length - 1 : prev - 1
+    );
+  };
+
+  // AFTER ALL HOOKS
+  if (loading) {
+    return (
+      <div
+        style={{
+          color: "white",
+          textAlign: "center",
+          padding: "80px"
+        }}
+      >
+        Loading Projects...
+      </div>
+    );
+  }
+
+  if (!featuredProjects.length) {
+    return (
+      <div
+        style={{
+          color: "white",
+          textAlign: "center",
+          padding: "80px"
+        }}
+      >
+        No Projects Found
+      </div>
+    );
+  }
+
+  const leftIndex =
+    currentIndex === 0
+      ? featuredProjects.length - 1
+      : currentIndex - 1;
+
+  const rightIndex =
+    currentIndex === featuredProjects.length - 1
       ? 0
-      : current + 1;
+      : currentIndex + 1;
 
   return (
     <>
       <div className="carousel">
 
-        <button
-          className="arrow left"
-          onClick={() => setCurrent(previous)}
-        >
-          ←
-        </button>
+        <div className="carousel-container">
 
-        <div className="carousel-stage">
-
-          {/* LEFT CARD */}
+          <button
+            className="carousel-arrow left"
+            onClick={previousProject}
+          >
+            ←
+          </button>
 
           <ProjectCard
-            project={featured[previous]}
+            project={featuredProjects[leftIndex]}
             position="left"
           />
 
-          {/* CENTER CARD */}
-
-          <AnimatePresence mode="wait">
-
-            <motion.div
-              key={featured[current].id}
-              className="center-wrapper"
-              initial={{
-                opacity: 0,
-                scale: 0.92
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1
-              }}
-              exit={{
-                opacity: 0,
-                scale: 0.92
-              }}
-              transition={{
-                duration: 0.45
-              }}
-            >
-              <ProjectCard
-                project={featured[current]}
-                position="center"
-                onClick={() =>
-                  setSelectedProject(featured[current])
-                }
-              />
-            </motion.div>
-
-          </AnimatePresence>
-
-          {/* RIGHT CARD */}
+          <ProjectCard
+            project={featuredProjects[currentIndex]}
+            position="center"
+            onClick={() =>
+              setSelectedProject(featuredProjects[currentIndex])
+            }
+          />
 
           <ProjectCard
-            project={featured[next]}
+            project={featuredProjects[rightIndex]}
             position="right"
           />
 
+          <button
+            className="carousel-arrow right"
+            onClick={nextProject}
+          >
+            →
+          </button>
+
         </div>
 
-        <button
-          className="arrow right"
-          onClick={() => setCurrent(next)}
-        >
-          →
-        </button>
+        <div className="carousel-dots">
 
-        <div className="dots">
-
-          {featured.map((_, index) => (
+          {featuredProjects.map((_, index) => (
 
             <button
               key={index}
               className={
-                current === index
+                currentIndex === index
                   ? "dot active"
                   : "dot"
               }
-              onClick={() => setCurrent(index)}
+              onClick={() => setCurrentIndex(index)}
             />
 
           ))}

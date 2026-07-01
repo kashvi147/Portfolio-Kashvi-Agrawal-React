@@ -1,11 +1,9 @@
-
-/* ==========================================
+/* =========================================
    PROJECT SECTION
-========================================== */
+========================================= */
 
 .projects-section{
-    padding:120px 0;
-    position:relative;
+    padding:120px 20px;
     overflow:hidden;
 }
 
@@ -17,42 +15,31 @@
 .projects-subtitle{
     color:#56CFA2;
     letter-spacing:4px;
-    font-size:.8rem;
+    font-size:.85rem;
     font-weight:700;
+    margin-bottom:12px;
 }
 
 .projects-header h2{
-    color:white;
+    color:#fff;
     font-size:clamp(2.5rem,5vw,4rem);
-    margin:18px 0;
+    margin-bottom:18px;
 }
 
 .projects-header p{
     color:#94A3B8;
-    max-width:700px;
+    max-width:650px;
     margin:auto;
     line-height:1.8;
 }
 
 
-/* ==========================================
+/* =========================================
    CAROUSEL
-========================================== */
+========================================= */
 
 .carousel{
-
-    position:relative;
-
     width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
 }
 
 .carousel-container{
@@ -61,14 +48,20 @@
 
     width:1200px;
 
-    height:560px;
+    max-width:100%;
+
+    height:620px;
+
+    margin:auto;
+
+    perspective:1800px;
 
 }
 
 
-/* ==========================================
-   CARD
-========================================== */
+/* =========================================
+   PROJECT CARD
+========================================= */
 
 .project-card{
 
@@ -78,11 +71,11 @@
     left:50%;
 
     width:700px;
-    height:470px;
+    height:500px;
 
     transform:translate(-50%,-50%);
 
-    background:#111822;
+    background:#10161d;
 
     border-radius:28px;
 
@@ -90,21 +83,27 @@
 
     border:1px solid rgba(255,255,255,.08);
 
-    transition:.55s ease;
+    transition:
+        transform .55s ease,
+        opacity .55s ease,
+        filter .55s ease;
 
-    box-shadow:
-    0 30px 70px rgba(0,0,0,.45);
+    cursor:pointer;
 
 }
 
 
 /* CENTER */
 
+/* ===========================
+   CENTER CARD
+=========================== */
+
 .project-card.center{
 
     transform:
-    translate(-50%,-50%)
-    scale(1);
+        translate(-50%,-50%)
+        scale(1);
 
     opacity:1;
 
@@ -112,75 +111,83 @@
 
     z-index:5;
 
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.55);
+
+        animation: floatCard 5s ease-in-out infinite;
+
 }
 
-
-/* LEFT */
+/* ===========================
+   LEFT CARD
+=========================== */
 
 .project-card.left{
 
     transform:
-    translate(-135%,-50%)
-    scale(.78);
+        translate(-145%,-50%)
+        scale(.82)
+        rotateY(18deg);
 
-    opacity:.28;
+    opacity:.35;
 
-    filter:blur(3px);
-
-    pointer-events:none;
+    filter:blur(4px);
 
     z-index:2;
 
+    pointer-events:none;
+
 }
 
-
-/* RIGHT */
+/* ===========================
+   RIGHT CARD
+=========================== */
 
 .project-card.right{
 
     transform:
-    translate(35%,-50%)
-    scale(.78);
+        translate(45%,-50%)
+        scale(.82)
+        rotateY(-18deg);
 
-    opacity:.28;
+    opacity:.35;
 
-    filter:blur(3px);
-
-    pointer-events:none;
+    filter:blur(4px);
 
     z-index:2;
+
+    pointer-events:none;
 
 }
 
 
-/* ==========================================
+/* =========================================
    IMAGE
-========================================== */
+========================================= */
 
 .project-image{
 
-    width:100%;
-
-    height:240px;
+    height:250px;
 
 }
 
 .project-image img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
 
+    display:block;
+
 }
 
 
-/* ==========================================
+/* =========================================
    CONTENT
-========================================== */
+========================================= */
 
-.project-info{
+.project-content{
 
     padding:28px;
 
@@ -196,32 +203,36 @@
 
     text-transform:uppercase;
 
+    margin-bottom:12px;
+
 }
 
-.project-title{
+.project-content h3{
 
     color:white;
 
-    font-size:2rem;
+    margin-bottom:15px;
 
-    margin:12px 0;
+    font-size:2rem;
 
 }
 
 .project-description{
 
-    color:#A5B4C8;
+    color:#94A3B8;
 
-    line-height:1.8;
+    line-height:1.7;
+
+    margin-bottom:20px;
 
 }
 
 
-/* ==========================================
-   TECH
-========================================== */
+/* =========================================
+   TAGS
+========================================= */
 
-.project-tech{
+.tech-list{
 
     display:flex;
 
@@ -229,67 +240,65 @@
 
     gap:10px;
 
-    margin-top:24px;
+    margin-bottom:20px;
 
 }
 
-.project-tech span{
+.tech-list span{
 
-    background:#1B2430;
+    background:#1B232D;
 
-    padding:8px 16px;
+    padding:8px 15px;
 
     border-radius:999px;
 
-    color:#D7DEE9;
+    color:#CBD5E1;
 
     font-size:.8rem;
 
 }
 
 
-/* ==========================================
-   BUTTON
-========================================== */
+/* =========================================
+   LINKS
+========================================= */
 
-.project-btn{
+.project-links{
 
-    display:inline-block;
+    display:flex;
 
-    margin-top:28px;
+    gap:14px;
 
-    padding:14px 24px;
+}
 
-    background:#56CFA2;
-
-    color:#07110D;
-
-    font-weight:700;
-
-    border-radius:999px;
+.project-links a{
 
     text-decoration:none;
 
-    transition:.3s;
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:#56CFA2;
+
+    color:#08110D;
+
+    font-weight:700;
 
 }
 
-.project-btn:hover{
 
-    transform:translateY(-3px);
-
-}
-
-
-/* ==========================================
+/* =========================================
    ARROWS
-========================================== */
+========================================= */
 
-.arrow{
+.carousel-arrow{
 
     position:absolute;
 
-    top:48%;
+    top:50%;
+
+    transform:translateY(-50%);
 
     width:58px;
 
@@ -299,68 +308,60 @@
 
     border-radius:50%;
 
-    background:#1A222C;
+    background:#161D25;
 
     color:white;
 
-    font-size:22px;
+    font-size:24px;
 
     cursor:pointer;
 
     z-index:20;
 
-    transition:.3s;
+}
+
+.carousel-arrow.left{
+
+    left:0;
 
 }
 
-.arrow:hover{
+.carousel-arrow.right{
 
-    background:#56CFA2;
-
-    color:black;
-
-}
-
-.arrow.left{
-
-    left:80px;
-
-}
-
-.arrow.right{
-
-    right:80px;
+    right:0;
 
 }
 
 
-/* ==========================================
+/* =========================================
    DOTS
-========================================== */
+========================================= */
 
-.dots{
+.carousel-dots{
 
     display:flex;
 
-    gap:14px;
+    justify-content:center;
 
-    margin-top:40px;
+    gap:12px;
+
+    margin-top:35px;
 
 }
 
 .dot{
 
-    width:11px;
+    width:12px;
 
-    height:11px;
+    height:12px;
+
+    border:none;
 
     border-radius:50%;
 
-    background:#475569;
+    background:#394150;
 
     cursor:pointer;
-
-    transition:.3s;
 
 }
 
@@ -371,5 +372,190 @@
     border-radius:999px;
 
     background:#56CFA2;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1100px){
+
+.project-card.left,
+.project-card.right{
+
+    display:none;
+
+}
+
+.project-card.center{
+
+    width:90%;
+
+}
+
+.carousel-container{
+
+    height:560px;
+
+}
+
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    padding:20px;
+}
+
+.modal{
+    width:650px;
+    max-width:90vw;
+    max-height:80vh;
+
+    background:#10161D;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+.modal-image{
+    height:220px;
+    flex-shrink:0;
+}
+
+.modal-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.modal-content{
+    padding:24px;
+    overflow-y:auto;
+}
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.modal-category{
+    color:#56CFA2;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.8rem;
+}
+
+.modal-status{
+    color:#CBD5E1;
+    font-size:.85rem;
+}
+
+.modal-content h2{
+    font-size:1.6rem;
+}
+
+.modal-content p{
+    color:#94A3B8;
+    line-height:1.8;
+    margin-bottom:24px;
+}
+
+.modal-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:28px;
+}
+
+.modal-tech span{
+    background:#1B232D;
+    color:#CBD5E1;
+    padding:8px 14px;
+    border-radius:999px;
+}
+
+.modal-buttons{
+    display:flex;
+    gap:14px;
+}
+
+.modal-buttons a{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:999px;
+    background:#56CFA2;
+    color:#08110D;
+    font-weight:700;
+}
+
+.close-modal{
+    position:absolute;
+    top:18px;
+    right:18px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:rgba(0,0,0,.5);
+    color:white;
+    font-size:18px;
+}
+
+.project-overlay{
+    position:absolute;
+    top:20px;
+    left:20px;
+}
+
+.project-overlay span{
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(8px);
+    color:white;
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:.8rem;
+}
+
+.project-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:28px;
+}
+
+@keyframes floatCard{
+
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+
+    50%{
+        transform:translate(-50%,-53%) scale(1.01);
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
 
 }
