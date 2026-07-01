@@ -1,0 +1,329 @@
+/* ==========================================================
+   KA-OS v3.0
+========================================================== */
+
+.loader{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#040608;
+    overflow:hidden;
+    z-index:999999;
+}
+
+/* Animated background */
+
+.loader::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(86,207,162,.07),transparent 28%),
+        radial-gradient(circle at 85% 80%,rgba(86,207,162,.05),transparent 28%);
+
+    animation:bgMove 10s ease-in-out infinite alternate;
+
+}
+
+@keyframes bgMove{
+
+    from{
+
+        transform:translateY(-20px);
+
+    }
+
+    to{
+
+        transform:translateY(20px);
+
+    }
+
+}
+
+/* ========================================================== */
+
+.terminal{
+
+    position:relative;
+
+    width:min(900px,92vw);
+
+    background:#0B1016;
+
+    border:1px solid rgba(86,207,162,.18);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 0 60px rgba(86,207,162,.12);
+
+    animation:bootIn .8s ease;
+
+    color:white;
+
+    font-family:"JetBrains Mono", monospace;
+
+}
+
+@keyframes bootIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+/* ========================================================== */
+
+.terminal-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:18px 25px;
+
+    background:#111822;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.terminal-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.terminal-buttons span{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.red{
+
+    background:#ff5f56;
+
+}
+
+.yellow{
+
+    background:#ffbd2e;
+
+}
+
+.green{
+
+    background:#27c93f;
+
+}
+
+.terminal-header h2{
+
+    margin:0;
+
+    color:#56CFA2;
+
+    font-size:17px;
+
+    letter-spacing:2px;
+
+}
+
+/* ========================================================== */
+
+.terminal-body{
+
+    padding:35px;
+
+}
+
+.prompt{
+
+    color:#56CFA2;
+
+    margin-bottom:30px;
+
+    font-size:15px;
+
+}
+
+/* ========================================================== */
+
+.task-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    color:#cbd5e1;
+
+}
+
+.task-row span:last-child{
+
+    color:#56CFA2;
+
+    font-weight:700;
+
+}
+
+/* ========================================================== */
+
+.loading-bar{
+
+    margin-top:35px;
+
+    height:8px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    background:#18222C;
+
+}
+
+.loading-fill{
+
+    height:100%;
+
+    background:#56CFA2;
+
+    transition:.6s;
+
+    box-shadow:
+        0 0 15px #56CFA2;
+
+}
+
+/* ========================================================== */
+
+.boot-info{
+
+    margin-top:40px;
+
+}
+
+.boot-info p{
+
+    color:#94A3B8;
+
+    margin-bottom:8px;
+
+    margin-top:20px;
+
+}
+
+.boot-info h3{
+
+    margin:0;
+
+    color:white;
+
+    font-size:22px;
+
+    letter-spacing:2px;
+
+}
+
+.cursor{
+
+    color:#56CFA2;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ========================================================== */
+
+.continue{
+
+    margin-top:40px;
+
+    color:#56CFA2;
+
+    letter-spacing:1px;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+    50%{
+
+        opacity:.3;
+
+    }
+
+}
+
+/* ========================================================== */
+
+.terminal::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        repeating-linear-gradient(
+
+            transparent,
+
+            transparent 3px,
+
+            rgba(255,255,255,.018) 4px
+
+        );
+
+}

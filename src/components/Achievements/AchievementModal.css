@@ -1,0 +1,377 @@
+/* ===========================================================
+   KA-OS GITHUB INTELLIGENCE DASHBOARD
+=========================================================== */
+
+.achievement-overlay{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.75);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+
+    align-items: flex-start;   /* <-- NOT center */
+
+    overflow-y: auto;
+
+    padding: 40px 20px;
+
+    z-index: 9999;
+}
+
+/* ========================= */
+
+.achievement-dashboard{
+
+     width:min(540px,95vw);
+
+    background:#11161E;
+
+    border:1px solid rgba(86,207,162,.12);
+
+    border-radius:24px;
+
+    padding:26px;
+
+    color:white;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.55),
+        0 0 35px rgba(86,207,162,.08);
+
+        max-height: none;
+
+        margin-bottom: 40px;
+
+}
+
+/* ========================= */
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+.dashboard-tag{
+
+    color:#56CFA2;
+
+    font-size:.75rem;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:6px;
+
+}
+
+.dashboard-header h2{
+
+    font-size:1.9rem;
+
+    font-weight:700;
+
+}
+
+/* ========================= */
+
+.close-achievement{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#1A2330;
+
+    color:white;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.close-achievement:hover{
+
+    background:#56CFA2;
+
+    color:black;
+
+}
+
+/* ========================= */
+
+.activity-section{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+/* TEMP RING */
+
+.activity-ring{
+
+    width:145px;
+
+    height:145px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    border:8px solid #56CFA2;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+        0 0 30px rgba(86,207,162,.18);
+
+}
+
+.activity-value{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.activity-title{
+
+    margin-top:16px;
+
+    color:#94A3B8;
+
+    font-size:.95rem;
+
+}
+
+/* ========================= */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+    margin-bottom:22px;
+
+}
+
+.stat-card{
+
+    background:#1A2330;
+
+    border-radius:18px;
+
+    padding:14px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    border:1px solid transparent;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#56CFA2;
+
+}
+
+.stat-card span{
+
+    font-size:1.4rem;
+
+}
+
+.stat-card h3{
+
+    font-size:1.45rem;
+
+    margin:10px 0 5px;
+
+}
+
+.stat-card p{
+
+    color:#94A3B8;
+
+    font-size:.9rem;
+
+}
+
+/* ========================= */
+
+.latest-card{
+
+    background:#1A2330;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    margin-bottom:16px;
+
+}
+
+.small-heading{
+
+    color:#56CFA2;
+
+    font-size:.75rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    margin-bottom:8px;
+
+}
+
+.latest-card h3{
+
+    margin-bottom:8px;
+
+}
+
+.latest-card span{
+
+    color:#94A3B8;
+
+    font-size:.9rem;
+
+}
+
+/* ========================= */
+
+.language-section{
+
+    margin-bottom:24px;
+
+}
+
+.language-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:12px;
+
+}
+
+.language-tags span{
+
+    background:#1A2330;
+
+    padding:8px 15px;
+
+    border-radius:999px;
+
+    color:#D4DCE8;
+
+    font-size:.85rem;
+
+}
+
+/* ========================= */
+
+.github-button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:48px;
+
+    width:100%;
+
+    border-radius:999px;
+
+    background:#56CFA2;
+
+    color:#08120D;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.github-button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ========================= */
+
+@media(max-width:650px){
+
+.achievement-dashboard{
+
+    width:90%;
+
+    max-height:88vh;
+
+    overflow-y:auto;
+
+}
+.stats-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.activity-ring{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+}
+
+.achievement-dashboard::-webkit-scrollbar{
+    width:6px;
+}
+
+.achievement-dashboard::-webkit-scrollbar-thumb{
+    background:#56CFA2;
+    border-radius:20px;
+}
