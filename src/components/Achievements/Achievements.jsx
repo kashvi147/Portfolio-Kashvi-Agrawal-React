@@ -30,7 +30,7 @@ function Achievements() {
             data-aos="fade-up"
             data-aos-duration="650"
           >
-            <span className="text-xs font-semibold uppercase tracking-widest text-var(--green)-400 sm:text-sm">
+            <span className="text-xs font-semibold uppercase tracking-widest text-green-400 sm:text-sm">
               Achievements
             </span>
 
@@ -66,7 +66,7 @@ function Achievements() {
                   Competed in college hackathons, building prototypes under time pressure and collaborating in teams.
                 </p>
 
-                <p className="mt-2 text-xs text-var(--green)-400">
+                <p className="mt-2 text-xs text-green-400">
                   2025 – Present
                 </p>
 
@@ -92,7 +92,7 @@ function Achievements() {
                   Completed online courses in web development, data structures, and modern JavaScript frameworks.
                 </p>
 
-                <p className="mt-2 text-xs text-var(--green)-400">
+                <p className="mt-2 text-xs text-green-400">
                   Self-paced learning
                 </p>
 
@@ -121,7 +121,7 @@ function Achievements() {
                   Click to view live GitHub analytics.
                 </p>
 
-                <p className="mt-2 text-xs text-var(--green)-400">
+                <p className="mt-2 text-xs text-green-400">
                   github.com/kashvi147
                 </p>
 
@@ -147,7 +147,7 @@ function Achievements() {
                   Pursuing Computer Science at Jaypee Institute of Information Technology with focus on software engineering.
                 </p>
 
-                <p className="mt-2 text-xs text-var(--green)-400">
+                <p className="mt-2 text-xs text-green-400">
                   JIIT
                 </p>
 

@@ -4,7 +4,7 @@ function Skills() {
       <section id="skills" className="bg-[#12121a] safe-x py-16 sm:px-8 sm:py-28" data-aos="fade-up">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center sm:mb-14" data-aos="fade-up" data-aos-duration="650">
-            <span className="text-xs font-semibold uppercase tracking-widest text-var(--green)-400 sm:text-sm">Skills</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-green-400 sm:text-sm">Skills</span>
             <h2 className="font-display mt-2 text-2xl font-bold text-white sm:text-3xl md:text-4xl">What I Work With</h2>
             <p className="mx-auto mt-3 max-w-2xl px-2 text-sm text-slate-400 sm:mt-4 sm:text-base">
               Technologies and tools I use to bring ideas to life.

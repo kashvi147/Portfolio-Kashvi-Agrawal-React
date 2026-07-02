@@ -644,23 +644,15 @@ var(--bg);
       }
 
       /* Surface & border overrides */
-      .bg-\[#0a0a0f\]\/98 {
-        background: rgba(5, 5, 5, 0.94) !important;
-        backdrop-filter: blur(20px) !important;
-      }
+      .navbar-surface {
+  background: rgba(5, 5, 5, 0.94);
+  backdrop-filter: blur(20px);
+}
 
-      .bg-\[#12121a\] {
-        background: rgba(255, 255, 255, 0.02) !important;
-        backdrop-filter: blur(12px) !important;
-      }
+      
 
-      .border-\[#2a2a3a\] {
-        border-color: var(--color-border) !important;
-      }
-
-      .bg-\[#1a1a24\] {
-        background: rgba(255, 255, 255, 0.03) !important;
-      }
+     
+      
 
       article.card-hover {
         background: rgba(255, 255, 255, 0.02) !important;
@@ -674,11 +666,7 @@ var(--bg);
         border-color: rgba(77, 255, 122, 0.22) !important;
       }
 
-      .bg-\[#12121a\] p,
-      .bg-\[#12121a\] h3,
-      .bg-\[#1a1a24\] p {
-        color: var(--color-text-secondary);
-      }
+      
 
       /* Form styling */
       input,
@@ -721,63 +709,63 @@ var(--bg);
       }
 
       /* Accent color remapping (var(--green) → robotics palette) */
-      .text-var(--green)-400 {
+      .text-green-400 {
         color: var(--color-accent) !important;
       }
 
-      .text-var(--green)-300\/75 {
+      .text-green-300\/75 {
         color: rgba(0, 229, 255, 0.8) !important;
       }
 
-      .text-var(--green)-400\/80 {
+      .text-green-400\/80 {
         color: rgba(77, 255, 122, 0.85) !important;
       }
 
-      .text-var(--green)-300 {
+      .text-green-300 {
         color: #6dff92 !important;
       }
 
-      .hover\:text-var(--green)-300:hover,
-      .hover\:text-var(--green)-400:hover {
+      .hover\:text-green-300:hover,
+      .hover\:text-green-400:hover {
         color: var(--color-accent-secondary) !important;
       }
 
-      .bg-var(--green)-600 {
+      .bg-green-600 {
         background: var(--color-accent) !important;
         color: #050505 !important;
         box-shadow: 0 4px 24px rgba(77, 255, 122, 0.22);
         transition: background 280ms ease, box-shadow 280ms ease, transform 280ms ease !important;
       }
 
-      .bg-var(--green)-600:hover,
-      .hover\:bg-var(--green)-500:hover {
+      .bg-green-600:hover,
+      .hover\:bg-green-500:hover {
         background: #6dff92 !important;
         color: #050505 !important;
         box-shadow: 0 8px 32px rgba(77, 255, 122, 0.32);
         transform: translateY(-1px);
       }
 
-      .bg-var(--green)-600:active {
+      .bg-green-600:active {
         transform: translateY(0);
       }
 
-      .border-var(--green)-500\/50:hover,
-      .hover\:border-var(--green)-500\/50:hover {
+      .border-green-500\/50:hover,
+      .hover\:border-green-500\/50:hover {
         border-color: rgba(77, 255, 122, 0.35) !important;
         background: rgba(77, 255, 122, 0.04) !important;
       }
 
-      .bg-var(--green)-600\/20 {
+      .bg-green-600\/20 {
         background: rgba(77, 255, 122, 0.08) !important;
         border: 1px solid rgba(77, 255, 122, 0.15);
         backdrop-filter: blur(4px);
       }
 
-      .focus\:border-var(--green)-500:focus {
+      .focus\:border-green-500:focus {
         border-color: rgba(77, 255, 122, 0.4) !important;
       }
 
-      .focus\:ring-var(--green)-500:focus {
+      .focus\:ring-green-500:focus {
         --tw-ring-color: rgba(77, 255, 122, 0.25) !important;
       }
 
@@ -806,10 +794,7 @@ var(--bg);
 
       /* Thumbnail & media surfaces */
       [style*="#161622"],
-      .bg-\[#161622\] {
-        background: #0a0a0a !important;
-      }
-
+      
       /* Section header spacing */
       section .mb-10 {
         margin-bottom: 3.5rem;
