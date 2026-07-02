@@ -1,9 +1,32 @@
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import "./AchievementModal.css";
+import useGithubProfile from "../../hooks/useGithubProfile";
+import ActivityRing from "./ActivityRing";
 
 function AchievementModal({ open, onClose }) {
+  const { profile, loading } = useGithubProfile();
 
   if (!open) return null;
+  if (loading) {
+  return (
+    <div className="achievement-overlay">
+      <div className="achievement-dashboard">
+        <h2>Loading GitHub Intelligence...</h2>
+      </div>
+    </div>
+  );
+}
+
+if (!profile) {
+  return (
+    <div className="achievement-overlay">
+      <div className="achievement-dashboard">
+        Failed to load GitHub profile.
+      </div>
+    </div>
+  );
+}
 
   return (
     <AnimatePresence>
@@ -68,13 +91,9 @@ function AchievementModal({ open, onClose }) {
 
           <div className="activity-section">
 
-            <div className="activity-ring">
-
-              <div className="activity-value">
-                91%
-              </div>
-
-            </div>
+           <ActivityRing
+  value={profile.activityScore}
+/>
 
             <p className="activity-title">
               Developer Activity Score
@@ -90,7 +109,7 @@ function AchievementModal({ open, onClose }) {
 
               <span>📁</span>
 
-              <h3>17</h3>
+              <h3>{profile.public_repos}</h3>
 
               <p>Repositories</p>
 
@@ -100,7 +119,7 @@ function AchievementModal({ open, onClose }) {
 
               <span>⭐</span>
 
-              <h3>42</h3>
+              <h3>{profile.totalStars}</h3>
 
               <p>Stars</p>
 
@@ -110,19 +129,18 @@ function AchievementModal({ open, onClose }) {
 
               <span>👥</span>
 
-              <h3>12</h3>
+              <h3>{profile.followers}</h3>
 
               <p>Followers</p>
 
             </div>
 
             <div className="stat-card">
+🍴
 
-              <span>🔥</span>
+<h3>{profile.totalForks}</h3>
 
-              <h3>High</h3>
-
-              <p>Activity</p>
+<p>Forks</p>
 
             </div>
 
@@ -137,11 +155,11 @@ function AchievementModal({ open, onClose }) {
             </p>
 
             <h3>
-              Portfolio_Kashvi_React
+              {profile.latestRepo.name}
             </h3>
 
             <span>
-              Updated 2 days ago
+              {new Date(profile.latestRepo.updated_at).toLocaleDateString()}
             </span>
 
           </div>
@@ -156,13 +174,13 @@ function AchievementModal({ open, onClose }) {
 
             <div className="language-tags">
 
-              <span>React</span>
+              {profile.languages.map((lang) => (
 
-              <span>Python</span>
+  <span key={lang.name}>
+    {lang.name}
+  </span>
 
-              <span>C++</span>
-
-              <span>Arduino</span>
+))}
 
             </div>
 
@@ -184,6 +202,8 @@ function AchievementModal({ open, onClose }) {
       </motion.div>
 
     </AnimatePresence>
+
+    
   );
 }
 

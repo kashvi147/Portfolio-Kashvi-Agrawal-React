@@ -1,3 +1,4 @@
+import { fetchGithubRepos } from "../services/github";
 import { useEffect, useState } from "react";
 import "../styles/loader.css";
 import loaderData from "../data/loaderData";

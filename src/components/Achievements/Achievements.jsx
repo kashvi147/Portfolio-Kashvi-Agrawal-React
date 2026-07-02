@@ -1,15 +1,21 @@
 import { useState } from "react";
 import AchievementModal from "./AchievementModal";
+import HackathonModal from "./HackathonModal";
 
 function Achievements() {
-
   const [openModal, setOpenModal] = useState(false);
+  const [openHackathon, setOpenHackathon] = useState(false);
 
   return (
     <>
       <AchievementModal
         open={openModal}
         onClose={() => setOpenModal(false)}
+      />
+
+      <HackathonModal
+        open={openHackathon}
+        onClose={() => setOpenHackathon(false)}
       />
 
       <section
@@ -41,7 +47,10 @@ function Achievements() {
 
             {/* Hackathon */}
 
-            <div className="card-hover flex flex-col gap-4 rounded-2xl border border-[#2a2a3a] bg-[#1a1a24] p-5 sm:flex-row sm:items-start sm:gap-5 sm:p-6">
+            <div
+              onClick={() => setOpenHackathon(true)}
+              className="card-hover cursor-pointer flex flex-col gap-4 rounded-2xl border border-[#2a2a3a] bg-[#1a1a24] p-5 sm:flex-row sm:items-start sm:gap-5 sm:p-6 hover:border-[#56CFA2] transition-all duration-300"
+            >
 
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-var(--green)-600/20 text-xl">
                 🏆
@@ -58,7 +67,7 @@ function Achievements() {
                 </p>
 
                 <p className="mt-2 text-xs text-var(--green)-400">
-                  2024 – Present
+                  2025 – Present
                 </p>
 
               </div>
@@ -91,7 +100,7 @@ function Achievements() {
 
             </div>
 
-            {/* OPEN SOURCE CARD */}
+            {/* Open Source */}
 
             <div
               onClick={() => setOpenModal(true)}
@@ -151,6 +160,7 @@ function Achievements() {
         </div>
 
       </section>
+
     </>
   );
 }
